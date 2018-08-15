@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c84914fbbb9689088b1d8e37fe2155fe",
+    "content-hash": "ee6aae4bf1c69a16759e35d81353cb2b",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -59,7 +59,9 @@
                 "twitter"
             ],
             "time": "2018-07-04T01:28:41+00:00"
-        },
+        }
+    ],
+    "packages-dev": [
         {
             "name": "ccampbell/chromephp",
             "version": "4.1.0",
@@ -104,7 +106,6 @@
             "time": "2013-06-26T03:44:33+00:00"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
