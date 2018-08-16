@@ -13,7 +13,7 @@ class TrendsGetter {
 
     public function __construct(){
         $this->configLoad(dirname(__FILE__)."/../setting.ini");
-        $this->connectionData = $this->connection($twitterKey);
+        $this->connectionData = $this->connection($this->twitterKey);
     }
 
     public function connection(Array $twitterKey){
