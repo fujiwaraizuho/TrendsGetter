@@ -16,7 +16,7 @@ class TrendsGetter {
         $this->connectionData = $this->connection($this->twitterKey);
     }
 
-    public function connection(Array $twitterKey){
+    public function connection(Array $twitterKey): TwitterOAuth{
         $data = new TwitterOAuth(
             $twitterKey["ConsumerKey"],
             $twitterKey["ConsumerSecret"],
@@ -25,6 +25,12 @@ class TrendsGetter {
         );
 
         return $data;
+    }
+
+    public function debug($message){
+        if ($this->app["debug"]) {
+            ChromePhp::log($this->app["name"]." | ".$message);
+        }
     }
 
     public function configLoad(String $path){
@@ -48,18 +54,14 @@ class TrendsGetter {
         );
 
         if (($code = $this->connectionData->getLastHttpCode()) === 200) {
-            if ($this->app["debug"]) {
-                ChromePhp::log($this->app["name"]."| Success!!");
-            }
+            $this->debug("Success!!");
         } else {
             switch ($code) {
                 default:
                     $message = [
                         "error" => "Not Pattern Error Code!!"
                     ];
-                    if ($this->app["debug"]) {
-                        ChromePhp::log($this->app["name"]."| Failure!!");
-                    }
+                    $this->debug("Failure!!");
                     break;
             }
         }
