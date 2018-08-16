@@ -3,7 +3,7 @@
 require_once("src/TrendsGetter.php");
 
 $getter = new TrendsGetter();
-$data = $getter->getTrends($getter);
+$data = $getter->getTrends(1);
 
 ?>
 <html>
